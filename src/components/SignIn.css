@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-box {
+  width: 400px;
+  height: 600px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+}
+
+.login-header {
+  padding: 30px 0px 30px 0px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.login-email {
+  margin: 20px;
+}
+
+.login-password {
+  margin: 20px;
+}
+
+.remember-id {
+  padding-right: 60px;
+}
+
+.loginSumbit {
+}
