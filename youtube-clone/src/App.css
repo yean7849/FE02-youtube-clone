@@ -1,5 +1,6 @@
 main {
   margin: 30px 24px;
+  display: flex;
 }
 
 .title {
@@ -130,4 +131,9 @@ main {
   width: 36px;
   height: 36px;
   margin-right: 8px;
+}
+
+.recommendedVideo {
+  width: 440px;
+  height: auto;
 }
