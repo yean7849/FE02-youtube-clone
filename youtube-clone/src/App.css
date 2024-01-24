@@ -8,16 +8,17 @@ main {
   font-weight: 700;
   line-height: 28px;
   word-spacing: 0px;
-  display: inline;
   height: 28px;
   width: 672px;
+  margin: 10px;
 }
 
 .img-box {
-  width: 50px;
-  height: 50px;
+  width: 42.5px;
+  height: 42.5px;
   border-radius: 70%;
   overflow: hidden;
+  margin-top: -2px;
 }
 
 .profile {
@@ -35,6 +36,100 @@ main {
 
 .channel-info {
 }
-.button {
+.btn {
   display: flex;
+}
+
+.channel-info-title {
+  margin: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+}
+.channel-info-subscribers {
+  margin: 0px 10px 0px 10px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #606060;
+}
+
+.channel-info-subscribe-btn-box {
+  height: 36px;
+  width: 80.2266px;
+}
+
+.channel-info-subscribe-btn {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 36px;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 30px;
+  width: 56.2266px;
+  height: 36px;
+}
+
+.btn-likeUnlike-like {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: #f2f2f2;
+  border: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  width: 90px;
+  height: 36px;
+}
+
+.btn-likeUnlike-unlike {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: #f2f2f2;
+  border: none;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  width: 52px;
+  height: 36px;
+  margin-right: 8px;
+}
+
+.btn-share {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 30px;
+  width: 80px;
+  height: 36px;
+  margin-right: 8px;
+}
+
+.btn-more {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 30px;
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
 }
