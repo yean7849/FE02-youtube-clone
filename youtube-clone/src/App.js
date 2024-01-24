@@ -1,6 +1,8 @@
 import './App.css';
 import Buttons from './video page/Components/Buttons';
 import Channel from './video page/Components/Channel';
+import CommentContents from './video page/Components/CommentContents';
+import Comments from './video page/Components/Comments';
 import Detail from './video page/Components/Detail';
 import RcmVideoList from './video page/Components/RcmVideoList';
 import Video from './video page/Components/Video';
@@ -19,29 +21,8 @@ function App() {
             </div>
           </div>
           <Detail />
-          <div className='comment'>
-            <div className='comment-box'>
-              <div className='comment-number'>댓글 20개</div>
-              <div className='comment-filter'>정렬 기준</div>
-            </div>
-          </div>
-          <div className='comment-contents'>
-            <div className='comment-contents-box'>
-              <div className='comment-contents-img'>이미지</div>
-              <div>
-                <div className='comment-contents-id-box'>
-                  <div className='comment-contents-id'>@user-11111111</div>
-                  <div className='comment-contents-date'>1일 전</div>
-                </div>
-                <div className='comment-contents-content'>덧글 내용</div>
-                <div className='comment-contents-btn'>
-                  <button className='comment-contents-btn-like-unlike'>좋</button>
-                  <button className='comment-contents-btn-like-unlike'>싫</button>
-                  <button className='comment-contents-recomment'>답글</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Comments />
+          <CommentContents />
         </div>
         <div className='list-side'>
           <RcmVideoList />
