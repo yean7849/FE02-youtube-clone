@@ -1,22 +1,12 @@
 import profile from './profile.png';
 import './App.css';
+import Video from './video page/Video';
 
 function App() {
   return (
     <div className='App'>
       <main>
-        <div>
-          <iframe
-            className='video'
-            style={{ borderRadius: '0.8rem' }}
-            width='672'
-            height='378'
-            src='https://www.youtube.com/embed/baaNwRAhHBo?si=UYQTZfnXBF8XwJ0g'
-            title='YouTube video player'
-            frameborder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-            allowfullscreen></iframe>
-        </div>
+        <Video />
         <div className='video-info'>
           <div className='title'>동영상 제목</div>
           <div className='video-info-bar'>
