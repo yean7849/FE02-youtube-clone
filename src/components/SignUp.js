@@ -5,6 +5,7 @@ const SignUp = () => {
   const [SignUpId, setSignUpId] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
 
   const emailInputChange = (event) => {
     setEmail(event.target.value);
@@ -43,8 +44,8 @@ const SignUp = () => {
             className="signup-password-check"
             type="password"
             placeholder="비밀번호확인"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
+            value={passwordConfirm}
+            onChange={(event) => setPasswordConfirm(event.target.value)}
           />
         </div>
         <br />

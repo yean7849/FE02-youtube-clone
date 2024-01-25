@@ -50,7 +50,11 @@ const SignIn = () => {
           로그인
         </button>
         <br />
-        <button className="signup-in" onClick={signupHandler} type="button">
+        <button
+          className="signup-in"
+          onClick={() => navigate("/signup")}
+          type="button"
+        >
           회원가입
         </button>
         <span> 아이디 찾기</span>
