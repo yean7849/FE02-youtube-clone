@@ -22,13 +22,19 @@
 }
 
 .login-email {
-  width: 50%;
+  width: 60%;
   padding: 10px;
   margin-top: 10px;
 }
 
+.errorMessageWrap {
+  font-size: 12px;
+  color: red;
+  padding-top: 5px;
+}
+
 .login-password {
-  width: 50%;
+  width: 60%;
   padding: 10px;
   margin-top: 10px;
 }
@@ -41,11 +47,16 @@
   width: 200px;
   padding: 10px;
   margin-bottom: 40px;
-  background-color: gray;
+  background-color: rgb(243, 101, 101);
   color: white;
   cursor: pointer;
   border: none;
   border-radius: 5px;
+}
+
+.loginSumbit:disabled {
+  background-color: gray;
+  color: white;
 }
 
 .signup-in {
