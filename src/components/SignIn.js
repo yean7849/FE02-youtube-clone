@@ -21,8 +21,12 @@ export default function SignIn() {
   const loginHandler = () => {
     if (email === User.email && password === User.password) {
       alert("로그인에 성공했습니다.");
+      setEmail("");
+      setPassword("");
     } else {
       alert("등록되지 않은 회원입니다.");
+      setEmail("");
+      setPassword("");
     }
   };
 
