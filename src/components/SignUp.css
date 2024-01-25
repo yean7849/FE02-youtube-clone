@@ -24,25 +24,31 @@
 .signup-Id {
   width: 60%;
   padding: 10px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .signup-email {
   width: 60%;
   padding: 10px;
-  margin-top: 30px;
+  margin-top: 10px;
+}
+
+.signupErrorMessage {
+  font-size: 12px;
+  color: red;
+  padding-top: 5px;
 }
 
 .signup-password {
   width: 60%;
   padding: 10px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .signup-password-check {
   width: 60%;
   padding: 10px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .signupSumbit {

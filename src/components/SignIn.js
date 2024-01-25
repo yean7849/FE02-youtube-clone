@@ -16,7 +16,7 @@ export default function SignIn() {
   const [passwordValid, setPasswordValid] = useState(false);
   const [notNext, setNotNext] = useState(false);
 
-  const [remembeId, setRememberId] = useState(false);
+  const [rememberId, setRememberId] = useState(false);
 
   const loginHandler = () => {
     if (email === User.email && password === User.password) {
@@ -33,7 +33,7 @@ export default function SignIn() {
   const LoginEmailHandler = (event) => {
     setEmail(event.target.value);
     const regex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
-    if (regex.test(email)) {
+    if (regex.test(event.target.value)) {
       setEmailValid(true);
     } else {
       setEmailValid(false);
@@ -44,7 +44,7 @@ export default function SignIn() {
     setPassword(event.target.value);
     const regex =
       /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{8,20}$/;
-    if (regex.test(password)) {
+    if (regex.test(event.target.value)) {
       setPasswordValid(true);
     } else {
       setPasswordValid(false);
@@ -53,11 +53,11 @@ export default function SignIn() {
 
   useEffect(() => {
     if (emailValid && passwordValid) {
-      //값을 입력하지 않으면 로그인 버튼 활성화 X
+      // 값이 입력되면 로그인 버튼 활성화
       setNotNext(false);
-      return;
+    } else {
+      setNotNext(true);
     }
-    setNotNext(true);
   }, [emailValid, passwordValid]);
 
   return (
@@ -96,10 +96,10 @@ export default function SignIn() {
         <div className="remember-id">
           <input
             type="checkbox"
-            value={remembeId}
-            onChange={(event) => setRememberId(event.target.value)}
+            checked={rememberId}
+            onChange={(event) => setRememberId(event.target.checked)}
           />
-          아이디저장
+          아이디 저장
         </div>
         <button
           className="loginSumbit"
