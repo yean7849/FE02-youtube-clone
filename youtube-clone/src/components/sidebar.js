@@ -69,3 +69,102 @@ const SidebarWrapper = styled.div`
       `}
   }
 `;
+
+const Sidebar = () => {
+  const dispatch = useDispatch();
+
+  const { sidebar: open } = useSelector((state) => state.sidebar);
+
+  const handleCloseSidebar = () => {
+    dispatch(closeSidebar());
+  };
+  return (
+    <SidebarWrapper open={open}>
+      <NavLink
+        onClick={handleCloseSidebar}
+        exact
+        to="/"
+        activeClassName="active"
+      >
+        <div className="icon">
+          <HomeIcon />
+          <span>Home</span>
+        </div>
+      </NavLink>
+
+      <NavLink
+        onClick={handleCloseSidebar}
+        to="/feed/trending"
+        activeClassName="active"
+      >
+        <div className="icon">
+          <TrendingIcon />
+          <span>Trending</span>
+        </div>
+      </NavLink>
+
+      <NavLink
+        onClick={handleCloseSidebar}
+        to="/feed/subscriptions"
+        activeClassName="active"
+      >
+        <div className="icon">
+          <SubIcon />
+          <span>Subscriptions</span>
+        </div>
+      </NavLink>
+
+      <div className="ruler"></div>
+
+      <NavLink
+        onClick={handleCloseSidebar}
+        to="/feed/library"
+        activeClassName="active"
+      >
+        <div className="icon">
+          <LibIcon />
+          <span>Library</span>
+        </div>
+      </NavLink>
+
+      <NavLink
+        onClick={handleCloseSidebar}
+        to="/feed/history"
+        activeClassName="active"
+      >
+        <div className="icon">
+          <HistoryIcon />
+          <span>History</span>
+        </div>
+      </NavLink>
+
+      <NavLink
+        onClick={handleCloseSidebar}
+        to="/feed/my_videos"
+        activeClassName="active"
+      >
+        <div className="icon">
+          <VidIcon />
+          <span>Your videos</span>
+        </div>
+      </NavLink>
+
+      <NavLink
+        onClick={handleCloseSidebar}
+        to="/feed/liked_videos"
+        activeClassName="active"
+      >
+        <div className="icon">
+          <LikeIcon />
+          <span>Liked videos</span>
+        </div>
+      </NavLink>
+
+      <div className="ruler"></div>
+
+      <Subscriptions />
+    </SidebarWrapper>
+  );
+};
+
+export default Sidebar;
