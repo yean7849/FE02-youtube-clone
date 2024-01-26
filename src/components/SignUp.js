@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+
 import "./SignUp.css";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
   const [SignUpId, setSignUpId] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,6 +24,7 @@ const SignUp = () => {
         setPassword("");
         setPasswordConfirm("");
         setPasswordMatch(true);
+        navigate("/");
       } else {
         setPasswordMatch(false);
       }
