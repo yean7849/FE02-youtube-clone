@@ -23,10 +23,12 @@ export default function SignIn() {
       alert("로그인에 성공했습니다.");
       setEmail("");
       setPassword("");
+      setNotNext(true);
     } else {
       alert("등록되지 않은 회원입니다.");
       setEmail("");
       setPassword("");
+      setNotNext(true);
     }
   };
 
