@@ -34,7 +34,7 @@ const Video = () => {
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
           allowFullScreen></iframe>
         <div className='video-info'>
-          <div className='title'>{videoId}</div>
+          <div className='title'>제목</div>
           <div className='video-info-bar'>
             <Channel videoId={videoId} />
             <Buttons videoId={videoId} />
