@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SignIn.css";
+import google from "../img/google.png";
+import kakao from "../img/kakao.png";
+import naver from "../img/naver.png";
 
 const User = {
   email: "test@test.com",
@@ -16,20 +19,15 @@ export default function SignIn() {
   const [passwordValid, setPasswordValid] = useState(false);
   const [notNext, setNotNext] = useState(false);
 
-  const [rememberId, setRememberId] = useState(false);
-
   const loginHandler = () => {
     if (email === User.email && password === User.password) {
       alert("로그인에 성공했습니다.");
-      setEmail("");
-      setPassword("");
-      setNotNext(true);
     } else {
       alert("등록되지 않은 회원입니다.");
-      setEmail("");
-      setPassword("");
-      setNotNext(true);
     }
+    setEmail("");
+    setPassword("");
+    setNotNext(true);
   };
 
   const LoginEmailHandler = (event) => {
@@ -54,12 +52,7 @@ export default function SignIn() {
   };
 
   useEffect(() => {
-    if (emailValid && passwordValid) {
-      // 값이 입력되면 로그인 버튼 활성화
-      setNotNext(false);
-    } else {
-      setNotNext(true);
-    }
+    setNotNext(!(emailValid && passwordValid));
   }, [emailValid, passwordValid]);
 
   return (
@@ -96,21 +89,18 @@ export default function SignIn() {
           )}
         </div>
         <div className="remember-id">
-          <input
-            type="checkbox"
-            checked={rememberId}
-            onChange={(event) => setRememberId(event.target.checked)}
-          />
+          <input type="checkbox" />
           아이디 저장
         </div>
         <button
           className="loginSumbit"
-          onClick={loginHandler}
           disabled={notNext}
+          onClick={loginHandler}
         >
           로그인
         </button>
         <br />
+
         <button
           className="signup-in"
           onClick={() => navigate("/signup")}
@@ -120,6 +110,14 @@ export default function SignIn() {
         </button>
         <span> 아이디 찾기</span>
         <span> 비밀번호 찾기</span>
+        <div className="social-login">
+          <hr />
+          <div className="social-login-iocons">
+            <img src={google} alt="Google" />
+            <img src={kakao} alt="Kakao" />
+            <img src={naver} alt="Facebook" />
+          </div>
+        </div>
       </div>
     </div>
   );
