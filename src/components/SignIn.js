@@ -110,13 +110,11 @@ export default function SignIn() {
         </button>
         <span> 아이디 찾기</span>
         <span> 비밀번호 찾기</span>
-        <div className="social-login">
-          <hr />
-          <div className="social-login-iocons">
-            <img src={google} alt="Google" />
-            <img src={kakao} alt="Kakao" />
-            <img src={naver} alt="Facebook" />
-          </div>
+        <div className="line">다른 계정으로 로그인</div>
+        <div className="social-login-iocons">
+          <img src={google} alt="Google" />
+          <img src={kakao} alt="Kakao" />
+          <img src={naver} alt="Facebook" />
         </div>
       </div>
     </div>
