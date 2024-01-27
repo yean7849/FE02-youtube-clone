@@ -14,19 +14,7 @@ const VideoPage = () => {
       <main>
         <div className='video-side'>
           <Video />
-          <div className='video-info'>
-            <div className='title'>동영상 제목</div>
-            <div className='video-info-bar'>
-              <Channel />
-              <Buttons />
-            </div>
-          </div>
-          <Detail />
-          <Comments />
-          <CommentContents />
-        </div>
-        <div className='list-side'>
-          <RcmVideoList />
+         
         </div>
       </main>
     </div>
