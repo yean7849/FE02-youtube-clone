@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Channel = ({videoId}) => {
+const Channel = (props) => {
   return (
     <div>
       <div className='channel'>
@@ -13,9 +13,9 @@ const Channel = ({videoId}) => {
           <a className='channel-info-title'>코딩애플</a>
           <p className='channel-info-subscribers'>구독자 23.4만명</p>
         </div>
-        <dib className='channel-info-subscribe-btn-box'>
+        <div className='channel-info-subscribe-btn-box'>
           <button className='channel-info-subscribe-btn'>구독</button>
-        </dib>
+        </div>
       </div>
     </div>
   );

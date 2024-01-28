@@ -14,7 +14,6 @@ const VideoPage = () => {
       <main>
         <div className='video-side'>
           <Video />
-         
         </div>
       </main>
     </div>
