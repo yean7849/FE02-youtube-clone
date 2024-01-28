@@ -1,10 +1,17 @@
 import React from 'react';
 import VideoPage from './video page/VideoPage';
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 
 const App = () => {
   return (
     <div>
-      <VideoPage />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path='/video/:videoId'
+            element={<VideoPage></VideoPage>}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };

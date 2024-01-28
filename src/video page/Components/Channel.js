@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Channel = () => {
+const Channel = ({videoId}) => {
   return (
     <div>
       <div className='channel'>
