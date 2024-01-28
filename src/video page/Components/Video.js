@@ -3,6 +3,9 @@ import axios from 'axios';
 import CommentContents from './CommentContents';
 import RcmVideoList from './RcmVideoList';
 import { useParams } from 'react-router-dom';
+import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
+import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
+import ReplyIcon from '@mui/icons-material/Reply';
 
 const Video = () => {
   const { videoId } = useParams();
@@ -76,14 +79,20 @@ const Video = () => {
             <div className='btn'>
               <div className='btn-likeUnlike'>
                 <button className='btn-likeUnlike-like'>
+                  <ThumbUpOffAltIcon />
                   {videoDetail
                     ? videoDetail.statistics.likeCount
                     : 'Loading...'}
                 </button>
-                <button className='btn-likeUnlike-unlike'>싫어요</button>
+                <button className='btn-likeUnlike-unlike'>
+                  <ThumbDownOffAltIcon />
+                </button>
               </div>
               <div className='btn-share-box'>
-                <button className='btn-share'>공유</button>
+                <button className='btn-share'>
+                  <ReplyIcon />
+                  공유
+                </button>
               </div>
               <div className='btn-more-box'>
                 <button className='btn-more'>・・・</button>
@@ -96,7 +105,14 @@ const Video = () => {
             {videoDetail && (
               <>
                 조회수 {videoDetail.statistics.viewCount}회{' '}
-                {videoDetail.snippet.publishedAt}
+                {new Date(videoDetail.snippet.publishedAt).toLocaleDateString(
+                  'ko-KR',
+                  {
+                    year: 'numeric',
+                    month: 'numeric',
+                    day: 'numeric',
+                  }
+                )}
               </>
             )}
           </div>
