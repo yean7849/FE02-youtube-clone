@@ -4,6 +4,7 @@ import "./SignIn.css";
 import google from "../img/google.png";
 import kakao from "../img/kakao.png";
 import naver from "../img/naver.png";
+import { KAKAO_AUTH_URL } from "./config";
 
 const User = {
   email: "test@test.com",
@@ -21,7 +22,7 @@ export default function SignIn() {
 
   const loginHandler = () => {
     if (email === User.email && password === User.password) {
-      alert("로그인에 성공했습니다.");
+      alert("로그인에 성공했습니다."); //알림 없애고 메인페이지로 이동하게 하기
     } else {
       alert("등록되지 않은 회원입니다.");
     }
@@ -114,7 +115,9 @@ export default function SignIn() {
         <div className="line">다른 계정으로 로그인</div>
         <div className="social-login-iocons">
           <img src={google} alt="Google" />
-          <img src={kakao} alt="Kakao" />
+          <a href={KAKAO_AUTH_URL}>
+            <img src={kakao} alt="Kakao" />
+          </a>
           <img src={naver} alt="naver" />
         </div>
       </div>
