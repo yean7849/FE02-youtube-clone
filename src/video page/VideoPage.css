@@ -2,8 +2,22 @@ main {
   margin: 30px 24px;
   display: flex;
 }
+
+.wrapper {
+  display: column;
+}
+
+@media (min-width: 1017px) {
+  .wrapper {
+    display: flex;
+  }
+}
+
+.videoWrapper {
+  max-width: 1016px;
+}
+
 .video-side {
-  width: 672px;
   margin-right: 40px;
 }
 .title {
@@ -12,7 +26,6 @@ main {
   font-weight: 700;
   line-height: 28px;
   word-spacing: 0px;
-  width: 672px;
   margin: 10px;
 }
 
@@ -262,4 +275,8 @@ main {
   border: none;
   background-color: transparent;
   border-radius: 20px;
+}
+
+.comment-contents-wrapper {
+  margin-left: 16px;
 }

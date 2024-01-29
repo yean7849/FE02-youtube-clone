@@ -10,6 +10,7 @@ import ReplyIcon from '@mui/icons-material/Reply';
 const Video = () => {
   const { videoId } = useParams();
   const [videoDetail, setVideoDetail] = useState(null);
+  const [likeCount, setLikeCount] = useState(0);
 
   useEffect(() => {
     const fetchVideoDetails = async () => {
@@ -40,15 +41,19 @@ const Video = () => {
     fetchVideoDetails();
   }, [videoId]);
 
+  const handleLikeClick = () => {
+    setLikeCount(likeCount + 1);
+  };
+
   return (
-    <div>
-      <div>
+    <div className='wrapper'>
+      <div className='videoWrapper'>
         <iframe
           className='video'
           style={{ borderRadius: '0.8rem' }}
           frameborder='0'
-          width='672'
-          height='378'
+          width='100%'
+          height='378px'
           src={`https://www.youtube.com/embed/${videoId}`}
           title='YouTube video player'
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
@@ -78,10 +83,12 @@ const Video = () => {
             </div>
             <div className='btn'>
               <div className='btn-likeUnlike'>
-                <button className='btn-likeUnlike-like'>
+                <button
+                  className='btn-likeUnlike-like'
+                  onClick={handleLikeClick}>
                   <ThumbUpOffAltIcon />
                   {videoDetail
-                    ? videoDetail.statistics.likeCount
+                    ? videoDetail.statistics.likeCount + likeCount
                     : 'Loading...'}
                 </button>
                 <button className='btn-likeUnlike-unlike'>
@@ -128,10 +135,10 @@ const Video = () => {
             <div className='comment-filter'>정렬 기준</div>
           </div>
         </div>
-        <CommentContents videoDetail={videoDetail} />
+        <CommentContents />
       </div>
       <div className='list-side'>
-        <RcmVideoList videoDetail={videoDetail} />
+        <RcmVideoList />
       </div>
     </div>
   );
