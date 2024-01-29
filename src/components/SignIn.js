@@ -4,7 +4,8 @@ import "./SignIn.css";
 import google from "../img/google.png";
 import kakao from "../img/kakao.png";
 import naver from "../img/naver.png";
-import { KAKAO_AUTH_URL } from "./config";
+import { KAKAO_AUTH_URL } from "./KakaoConfig";
+import { naverAuthUrl } from "./NaverConfig";
 
 const User = {
   email: "test@test.com",
@@ -118,7 +119,9 @@ export default function SignIn() {
           <a href={KAKAO_AUTH_URL}>
             <img src={kakao} alt="Kakao" />
           </a>
-          <img src={naver} alt="naver" />
+          <a href={naverAuthUrl}>
+            <img src={naver} alt="naver" />
+          </a>
         </div>
       </div>
     </div>
