@@ -6,6 +6,7 @@ import kakao from "../img/kakao.png";
 import naver from "../img/naver.png";
 import { KAKAO_AUTH_URL } from "./KakaoConfig";
 import { naverAuthUrl } from "./NaverConfig";
+import { googleOAuthUrl } from "./GoogleConfig";
 
 const User = {
   email: "test@test.com",
@@ -115,7 +116,9 @@ export default function SignIn() {
 
         <div className="line">다른 계정으로 로그인</div>
         <div className="social-login-iocons">
-          <img src={google} alt="Google" />
+          <a href={googleOAuthUrl}>
+            <img src={google} alt="Google" />
+          </a>
           <a href={KAKAO_AUTH_URL}>
             <img src={kakao} alt="Kakao" />
           </a>
