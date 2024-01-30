@@ -61,7 +61,8 @@ export default function SignIn() {
   return (
     <div className="container">
       <div className="login-box">
-        <div className="login-header">로그인</div>
+        <div className="login-header">FE-02팀 YouTube-clone</div>
+        <div className="login-main">로그인</div>
         <div className="from-group">
           <input
             className="login-email"
