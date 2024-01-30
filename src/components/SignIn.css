@@ -15,16 +15,22 @@
   text-align: center;
 }
 
+.login-title-logo img {
+  padding-top: 20px;
+  width: 190px;
+  height: 60px;
+}
+
 .login-header {
-  padding: 50px 0px 30px 0px;
-  font-size: 35px;
+  padding: 15px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .login-email {
   width: 60%;
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .errorMessageWrap {
@@ -36,18 +42,18 @@
 .login-password {
   width: 60%;
   padding: 10px;
-  margin-top: 10px;
+  margin: 8px 0px 8px 0px;
 }
 
 .remember-id {
-  padding: 20px 100px 40px 0px;
+  padding: 10px 100px 25px 0px;
 }
 
 .loginSumbit {
   width: 200px;
   padding: 10px;
-  margin-bottom: 40px;
-  background-color: rgb(243, 101, 101);
+  margin-bottom: 25px;
+  background-color: red;
   color: white;
   cursor: pointer;
   border: none;
@@ -61,20 +67,16 @@
 
 .signup-in {
   border: none;
-  padding: 10px;
+  padding: 15px;
   font-size: 15px;
   background-color: white;
   cursor: pointer;
 }
 
-.social-login {
+.social-login-icons img {
   padding: 10px;
-}
-
-.social-login-iocons img {
-  padding: 10px;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 }
 
 .line {
@@ -83,8 +85,7 @@
   align-items: center;
   color: gray;
   font-size: 15px;
-
-  margin: 12px;
+  margin: 20px 0px 20px 0px;
 }
 
 .line::before {
