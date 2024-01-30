@@ -1,170 +1,76 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import styled, { css } from "styled-components";
-import { NavLink } from "react-router-dom";
-import Subscriptions from "./Subscriptions";
-import {
-  HomeIcon,
-  TrendingIcon,
-  SubIcon,
-  LibIcon,
-  HistoryIcon,
-  VidIcon,
-  LikeIcon,
-} from "./Icons";
-import { closeSidebar } from "../reducers/sidebar";
+import "./Sidebar.css";
+import SidebarRow from "./SidebarRow";
+import HomeIcon from '@mui/icons-material/Home';
+import WhatshotIcon from "@mui/icons-material/Whatshot";
+import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined';
+import AccountBoxOutlinedIcon from '@mui/icons-material/AccountBoxOutlined';
+import HistoryIcon from "@mui/icons-material/History";
+import SmartDisplayOutlinedIcon from '@mui/icons-material/SmartDisplayOutlined';
+import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
+import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
+import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
+import WhatshotOutlinedIcon from '@mui/icons-material/WhatshotOutlined';
+import MusicNoteOutlinedIcon from '@mui/icons-material/MusicNoteOutlined';
+import MovieCreationOutlinedIcon from '@mui/icons-material/MovieCreationOutlined';
+import SensorsOutlinedIcon from '@mui/icons-material/SensorsOutlined';
+import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
+import NewspaperOutlinedIcon from '@mui/icons-material/NewspaperOutlined';
+import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined';
+import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import OutlinedFlagSharpIcon from '@mui/icons-material/OutlinedFlagSharp';
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
+import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
 
-const SidebarWrapper = styled.div`
-  position: fixed;
-  top: 55px;
-  left: 0;
-  height: 100vh;
-  width: 240px;
-  background: ${(props) => props.theme.grey};
-  padding-top: 1rem;
-  overflow: auto;
-  padding-bottom: 1.5rem;
-  transition: all 0.3s;
-  z-index: 2;
-
-  &::-webkit-scrollbar {
-    width: 0;
-  }
-
-  .icon {
-    display: flex;
-    align-items: center;
-    padding: 0.2rem 0;
-    padding-left: 1.5rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .icon:not(.hover-disable):hover {
-    background: ${(props) => props.theme.darkGrey};
-    cursor: pointer;
-  }
-
-  .active div {
-    background: ${(props) => props.theme.darkGrey};
-    cursor: pointer;
-  }
-
-  .active svg {
-    fill: #fff;
-  }
-
-  .icon span {
-    padding-left: 1rem;
-    position: relative;
-    top: 1px;
-  }
-
-  @media screen and (max-width: 1093px) {
-    transform: translateX(-100%);
-
-    ${(props) =>
-      props.open &&
-      css`
-        transform: translateX(0);
-      `}
-  }
-`;
-
-const Sidebar = () => {
-  const dispatch = useDispatch();
-
-  const { sidebar: open } = useSelector((state) => state.sidebar);
-
-  const handleCloseSidebar = () => {
-    dispatch(closeSidebar());
-  };
+function Sidebar() {
   return (
-    <SidebarWrapper open={open}>
-      <NavLink
-        onClick={handleCloseSidebar}
-        exact
-        to="/"
-        activeClassName="active"
-      >
-        <div className="icon">
-          <HomeIcon />
-          <span>Home</span>
-        </div>
-      </NavLink>
+    <div className="sidebar">
+      <SidebarRow title="홈" Icon={HomeIcon} />
+      <SidebarRow title="Trending" Icon={WhatshotIcon} />
+      <SidebarRow title="구독" Icon={SubscriptionsOutlinedIcon} />
+      <hr/>
 
-      <NavLink
-        onClick={handleCloseSidebar}
-        to="/feed/trending"
-        activeClassName="active"
-      >
-        <div className="icon">
-          <TrendingIcon />
-          <span>Trending</span>
-        </div>
-      </NavLink>
+      <h4>나</h4>
+      <SidebarRow title="내 채널" Icon={AccountBoxOutlinedIcon} />
+      <SidebarRow title="시청 기록" Icon={HistoryIcon} />
+      <SidebarRow title="내 동영상" Icon={SmartDisplayOutlinedIcon} />
+      <SidebarRow title="나중에 볼 동영상" Icon={WatchLaterOutlinedIcon} />
+      <SidebarRow title="좋아요 표시한 동영상" Icon={ThumbUpAltOutlinedIcon} />
+      <hr/>
 
-      <NavLink
-        onClick={handleCloseSidebar}
-        to="/feed/subscriptions"
-        activeClassName="active"
-      >
-        <div className="icon">
-          <SubIcon />
-          <span>Subscriptions</span>
-        </div>
-      </NavLink>
+      <h4>구독</h4>
+      <SidebarRow title="더보기" Icon={ExpandMoreOutlinedIcon} />
+      <hr/>
 
-      <div className="ruler"></div>
+      <h4>탐색</h4>
+      <SidebarRow title="인기 급상승" Icon={WhatshotOutlinedIcon} />
+      <SidebarRow title="음악" Icon={MusicNoteOutlinedIcon} />
+      <SidebarRow title="영화 및 TV" Icon={MovieCreationOutlinedIcon} />
+      <SidebarRow title="실시간" Icon={SensorsOutlinedIcon} />
+      <SidebarRow title="게임" Icon={SportsEsportsOutlinedIcon} />
+      <SidebarRow title="뉴스" Icon={NewspaperOutlinedIcon} />
+      <SidebarRow title="스포츠" Icon={EmojiEventsOutlinedIcon} />
+      <SidebarRow title="학습" Icon={LightbulbOutlinedIcon} />
+      <hr/>
 
-      <NavLink
-        onClick={handleCloseSidebar}
-        to="/feed/library"
-        activeClassName="active"
-      >
-        <div className="icon">
-          <LibIcon />
-          <span>Library</span>
-        </div>
-      </NavLink>
+      <h4>YouTube 더보기</h4>
+      <SidebarRow title="YouTube Premium" Icon={YouTubeIcon} />
+      <SidebarRow title="YouTube 스튜디오" Icon={YouTubeIcon} />
+      <SidebarRow title="YouTube Music" Icon={YouTubeIcon} />
+      <SidebarRow title="YouTube Kids" Icon={YouTubeIcon} />
+      <hr/>
 
-      <NavLink
-        onClick={handleCloseSidebar}
-        to="/feed/history"
-        activeClassName="active"
-      >
-        <div className="icon">
-          <HistoryIcon />
-          <span>History</span>
-        </div>
-      </NavLink>
+      <SidebarRow title="설정" Icon={SettingsOutlinedIcon} />
+      <SidebarRow title="신고 기록" Icon={OutlinedFlagSharpIcon} />
+      <SidebarRow title="고객센터" Icon={HelpOutlineOutlinedIcon} />
+      <SidebarRow title="의견 보내기" Icon={AnnouncementOutlinedIcon} />
+      <hr/>
 
-      <NavLink
-        onClick={handleCloseSidebar}
-        to="/feed/my_videos"
-        activeClassName="active"
-      >
-        <div className="icon">
-          <VidIcon />
-          <span>Your videos</span>
-        </div>
-      </NavLink>
-
-      <NavLink
-        onClick={handleCloseSidebar}
-        to="/feed/liked_videos"
-        activeClassName="active"
-      >
-        <div className="icon">
-          <LikeIcon />
-          <span>Liked videos</span>
-        </div>
-      </NavLink>
-
-      <div className="ruler"></div>
-
-      <Subscriptions />
-    </SidebarWrapper>
+      <p>&copy; 2024 Google LLC</p>
+    </div>
   );
-};
+}
 
 export default Sidebar;

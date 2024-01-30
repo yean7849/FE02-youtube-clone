@@ -1,27 +1,27 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { ThemeProvider } from "styled-components";
-import { ToastContainer } from "react-toastify";
-import GlobalStyle from "./styles/GlobalStyle";
-import { darkTheme } from "./styles/theme";
-import Router from "./Router";
-import Auth from "./components/Auth";
-import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
+import Sidebar from './components/Sidebar'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-const App = () => {
-  const { token } = useSelector((state) => state.user.data);
-
+function App() {
   return (
-    <ThemeProvider theme={darkTheme}>
-      <GlobalStyle />
-      <ToastContainer
-        autoClose={2500}
-        position="top-right"
-        closeButton={false}
-      />
-      {token ? <Router /> : <Auth />}
-    </ThemeProvider>
+    <div className="app">
+      <Router>
+        <Switch>
+          <Route path="/search/:searchTerm">
+            <div className="app__page">
+              <Sidebar />
+            </div>
+          </Route>
+          <Route path="/">
+            <div className="app__page">
+              <Sidebar />
+            </div>
+          </Route>
+        </Switch>
+      </Router> 
+    </div>
   );
-};
+}
 
 export default App;
