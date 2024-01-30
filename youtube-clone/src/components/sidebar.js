@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import "../components/Sidebar.css";
 import SidebarRow from "../components/SidebarRow";
 
@@ -72,6 +72,6 @@ function Sidebar() {
       <p>&copy; 2024 Google LLC</p>
     </div>
   );
-}
+};
 
 export default Sidebar;
