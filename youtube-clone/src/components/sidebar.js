@@ -1,6 +1,7 @@
 import React from "react";
-import "./Sidebar.css";
-import SidebarRow from "./SidebarRow";
+import "../components/Sidebar.css";
+import SidebarRow from "../components/SidebarRow";
+
 import HomeIcon from '@mui/icons-material/Home';
 import WhatshotIcon from "@mui/icons-material/Whatshot";
 import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined';
@@ -28,11 +29,11 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <SidebarRow title="홈" Icon={HomeIcon} />
-      <SidebarRow title="Trending" Icon={WhatshotIcon} />
+      <SidebarRow title="Shorts" Icon={WhatshotIcon} />
       <SidebarRow title="구독" Icon={SubscriptionsOutlinedIcon} />
       <hr/>
 
-      <h4>나</h4>
+      <h4>나 <span>&gt;</span></h4>
       <SidebarRow title="내 채널" Icon={AccountBoxOutlinedIcon} />
       <SidebarRow title="시청 기록" Icon={HistoryIcon} />
       <SidebarRow title="내 동영상" Icon={SmartDisplayOutlinedIcon} />
