@@ -1,7 +1,12 @@
 import React from "react";
+import Main from "../components/section/Main";
 
 const Webd = () => {
-  return <div>Webd</div>;
+  return (
+    <Main title="YouTube Music" description="YouTube Music">
+      Webd
+    </Main>
+  );
 };
 
 export default Webd;

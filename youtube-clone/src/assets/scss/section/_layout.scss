@@ -20,5 +20,8 @@
 #footer {
   text-align: center;
   background-color: white;
-  padding: 20px 20px 20px 260px;
+  padding: 20px;
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  color: var(white);
 }
