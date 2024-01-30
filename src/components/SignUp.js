@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
+import YouTube from "../img/YouTube.png";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const SignUp = () => {
         setPassword("");
         setPasswordConfirm("");
         setPasswordMatch(true);
-        navigate("/");
+        navigate("/signin");
       } else {
         setPasswordMatch(false);
       }
@@ -71,68 +72,87 @@ const SignUp = () => {
   return (
     <div className="signup-container">
       <div className="signup-box">
-        <div className="signup-header">회원가입</div>
-        <div className="from-group">
-          <input
-            className="signup-Id"
-            type="text"
-            placeholder="아이디"
-            value={SignUpId}
-            onChange={(event) => setSignUpId(event.target.value)}
-          />
-        </div>
+        <div className="signup-title-logo">
+          <img src={YouTube} alt="youtube" />
 
-        <br />
-        <div className="from-group">
-          <input
-            className="signup-email"
-            type="text"
-            placeholder="이메일"
-            value={email}
-            onChange={SignUpEmailHandler}
-          />
-        </div>
-        <div className="signupErrorMessage">
-          {!signupEmailValid && email.length > 0 && (
-            <div>올바른 이메일을 입력해주세요.</div>
-          )}
-        </div>
-        <br />
-        <div className="from-group">
-          <input
-            className="signup-password"
-            type="password"
-            placeholder="비밀번호"
-            value={password}
-            onChange={SignUpPasswordHandler}
-          />
-        </div>
-        <div className="signupErrorMessage">
-          {!signupPwValid && password.length > 0 && (
-            <div>영문, 숫자, 특수문자 포함 8자 이상 입력하세요.</div>
-          )}
-        </div>
-        <br />
-        <div className="from-group">
-          <input
-            className="signup-password-check"
-            type="password"
-            placeholder="비밀번호확인"
-            value={passwordConfirm}
-            onChange={SignUpPasswordConfirmHandler}
-          />
-        </div>
-        <div className="signupErrorMessage">
-          {!signupPwConfirmValid && passwordConfirm.length > 0 && (
-            <div>영문, 숫자, 특수문자 포함 8자 이상 입력하세요.</div>
-          )}
-          {!passwordMatch && <div>비밀번호가 일치하지 않습니다.</div>}
-        </div>
+          <div className="signup-header">회원가입</div>
+          <div className="from-group">
+            <input
+              className="signup-Id"
+              type="text"
+              placeholder="아이디"
+              value={SignUpId}
+              onChange={(event) => setSignUpId(event.target.value)}
+            />
+          </div>
 
-        <br />
-        <button className="signupSumbit" type="button" onClick={signupHandler}>
-          회원가입
-        </button>
+          <br />
+          <div className="from-group">
+            <input
+              className="signup-email"
+              type="text"
+              placeholder="이메일"
+              value={email}
+              onChange={SignUpEmailHandler}
+            />
+          </div>
+          <div className="signupErrorMessage">
+            {!signupEmailValid && email.length > 0 && (
+              <div>올바른 이메일을 입력해주세요.</div>
+            )}
+          </div>
+          <br />
+          <div className="from-group">
+            <input
+              className="signup-password"
+              type="password"
+              placeholder="비밀번호"
+              value={password}
+              onChange={SignUpPasswordHandler}
+            />
+          </div>
+          <div className="signupErrorMessage">
+            {!signupPwValid && password.length > 0 && (
+              <div>영문, 숫자, 특수문자 포함 8자 이상 입력하세요.</div>
+            )}
+          </div>
+          <br />
+          <div className="from-group">
+            <input
+              className="signup-password-check"
+              type="password"
+              placeholder="비밀번호확인"
+              value={passwordConfirm}
+              onChange={SignUpPasswordConfirmHandler}
+            />
+          </div>
+          <div className="signupErrorMessage">
+            {!signupPwConfirmValid && passwordConfirm.length > 0 && (
+              <div>영문, 숫자, 특수문자 포함 8자 이상 입력하세요.</div>
+            )}
+            {!passwordMatch && <div>비밀번호가 일치하지 않습니다.</div>}
+          </div>
+
+          <br />
+          <button
+            className="signupSumbit"
+            type="button"
+            onClick={signupHandler}
+          >
+            회원가입
+          </button>
+          <br />
+          <div className="login-movie">
+            <span className="login-page-move">이미 가입을 하셨나요? </span>
+            <button
+              className="login-page"
+              onClick={() => navigate("/signin")}
+              type="button"
+            >
+              로그인
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
