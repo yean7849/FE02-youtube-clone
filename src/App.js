@@ -1,12 +1,12 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SignIn from './components/SignIn';
-import VideoList from './components/VideoList';
-import SignUp from './components/SignUp';
-import VideoPage from './video page/VideoPage';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import styled from 'styled-components';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SignIn from "./components/SignIn";
+import VideoList from "./components/VideoList";
+import SignUp from "./components/SignUp";
+import VideoPage from "./video page/VideoPage";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import styled from "styled-components";
 
 const ScrollableSidebar = styled.div`
   height: 100%;
@@ -14,7 +14,7 @@ const ScrollableSidebar = styled.div`
 `;
 
 const mainVideo = {
-  display: 'flex',
+  display: "flex",
 };
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route
-          path='/'
+          path="/"
           element={
             <div>
               <Header />
@@ -32,10 +32,10 @@ const App = () => {
             </div>
           }
         />
-        <Route path='/signin' element={<SignIn />} />
-        <Route path='/signup' element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route
-          path='/video/:videoId'
+          path="/video/:videoId"
           element={
             <div>
               <Header />
@@ -44,14 +44,15 @@ const App = () => {
           }
         />
         <Route
-          path='/mypage'
+          path="/mypage"
           element={
-            <div className='app__page'>
+            <div className="app__page">
               <ScrollableSidebar>
                 <Sidebar />
               </ScrollableSidebar>
             </div>
-          }></Route>
+          }
+        ></Route>
       </Routes>
     </Router>
   );

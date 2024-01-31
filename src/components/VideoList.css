@@ -1,0 +1,22 @@
+/* VideoList.css */
+
+.video-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* 각 열을 나눌 간격을 설정합니다. */
+}
+
+.video-list-Main {
+  width: 400px;
+  height: 230px;
+  margin: -10px;
+  border-radius: 20px;
+}
+
+.video-item {
+  width: 400px; /* 각 동영상 아이템이 화면의 48%를 차지하도록 설정 */
+  height: 400px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 10px;
+}
