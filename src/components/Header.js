@@ -1,7 +1,6 @@
 import React from 'react';
 import HomeButton from './Homebutton';
 import SearchBar from './SearchBar';
-import SignUpMain from './SignUpMain';
 import Login from './Login';
 
 const Header = () => {
@@ -30,7 +29,6 @@ const Header = () => {
         </div>
 
         <div style={authenticationContainerStyle}>
-          <SignUpMain style={authenticationItemStyle} />
           <Login style={authenticationItemStyle} />
         </div>
       </div>

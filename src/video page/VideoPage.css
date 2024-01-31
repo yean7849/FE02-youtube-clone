@@ -5,7 +5,7 @@ main {
 
 .video-side {
   width: 672px;
-
+}
 
 .wrapper {
   display: column;
@@ -22,7 +22,6 @@ main {
 }
 
 .video-side {
-
   margin-right: 40px;
 }
 .title {

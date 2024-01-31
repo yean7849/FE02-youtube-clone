@@ -5,6 +5,17 @@ import VideoList from './components/VideoList';
 import SignUp from './components/SignUp';
 import VideoPage from './video page/VideoPage';
 import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import styled from 'styled-components';
+
+const ScrollableSidebar = styled.div`
+  height: 100%;
+  overflow-y: auto;
+`;
+
+const mainVideo = {
+  display: 'flex',
+};
 
 const App = () => {
   return (
@@ -14,7 +25,10 @@ const App = () => {
           path='/'
           element={
             <div>
-              <Header /> <VideoList />
+              <Header />
+              <div style={mainVideo}>
+                <Sidebar /> <VideoList />
+              </div>
             </div>
           }
         />
@@ -28,7 +42,16 @@ const App = () => {
               <VideoPage></VideoPage>
             </div>
           }
-        />{' '}
+        />
+        <Route
+          path='/mypage'
+          element={
+            <div className='app__page'>
+              <ScrollableSidebar>
+                <Sidebar />
+              </ScrollableSidebar>
+            </div>
+          }></Route>
       </Routes>
     </Router>
   );
