@@ -1,27 +1,66 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const RcmVideoList = () => {
+  const [videoList, setVideoList] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const options = {
+        method: 'GET',
+        url: 'https://youtube-v31.p.rapidapi.com/search',
+        params: {
+          relatedToVideoId: '7ghhRHRP6t4',
+          part: 'id,snippet',
+          type: 'video',
+          maxResults: '50',
+        },
+        headers: {
+          'X-RapidAPI-Key':
+            '124beff6fcmsh4aacf917256fd61p13baa9jsneffb301e16ac',
+          'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
+        },
+      };
+
+      try {
+        const response = await axios.request(options);
+        setVideoList(response.data.items);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div>
       <div className='rcmVideo-list'>
-        <div className='rcmVideo-list-filter'>
-          <button className='rcmVideo-list-filter-btn'>모두</button>
-          <button className='rcmVideo-list-filter-btn'>관련 콘텐츠</button>
-          <button className='rcmVideo-list-filter-btn'>
-            최근에 업로드된 동영상
-          </button>
-          <button className='rcmVideo-list-filter-btn'>감상한 동영상</button>
-        </div>
-        <div className='rcmVideo-list-thumnail'>
-          <img></img>
-        </div>
-        <div className='rcmVideo-list-info-box'>
-          <div className='rcmVideo-list-info-title'>아이묭 플리 모음</div>
-          <div className='rcmVideo-list-info-subinfo'>아이묭 다이스키</div>
-          <div className='rcmVideo-list-info-subinfo'>
-            조회수 328만회 ・ 1년 전
+        <div className='rcmVideo-list-filter'></div>
+        {videoList.map((video) => (
+          <div className='rcmVideo-list-wrapper' key={video.id.videoId}>
+            <div className='rcmVideo-list-thumnail'>
+              <img
+                style={{ borderRadius: '0.3rem' }}
+                src={video.snippet.thumbnails.default.url}
+                alt={video.snippet.title}
+              />
+            </div>
+            <div className='rcmVideo-list-info-box'>
+              <div className='rcmVideo-list-info-title'>
+                {video.snippet.title}
+              </div>
+              <div className='rcmVideo-list-info-subinfo'>
+                {video.snippet.channelTitle}
+              </div>
+
+              <div className='rcmVideo-list-info-subinfo'>
+                조회수 {video.statistics.viewCount} ・{' '}
+                {video.snippet.publishedAt}
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
