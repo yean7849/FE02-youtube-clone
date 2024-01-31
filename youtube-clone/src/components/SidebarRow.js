@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/SidebarRow.css";
+import "../css/SidebarRow.css";
 
 function SidebarRow({ Icon, title }) {
   return (

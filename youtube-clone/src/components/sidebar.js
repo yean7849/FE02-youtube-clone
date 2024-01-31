@@ -1,5 +1,5 @@
 import React from 'react';
-import "../components/Sidebar.css";
+import "../css/Sidebar.css";
 import SidebarRow from "../components/SidebarRow";
 
 import HomeIcon from '@mui/icons-material/Home';
