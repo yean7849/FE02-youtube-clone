@@ -1,48 +1,37 @@
-import React from "react";
-import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
-import SearchBar from "./components/SearchBar";
-import Homebutton from "./components/Homebutton";
-import Login from "./components/Login";
-import SignUp from "./components/SignUp";
-import VideoList from "./components/VideoList";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SignIn from './components/SignIn';
+import VideoList from './components/VideoList';
+import SignUp from './components/SignUp';
+import VideoPage from './video page/VideoPage';
+import Header from './components/Header';
 
-function App() {
-  const containerStyle = {
-    display: "flex",
-    justifyContent: "space-between",
-    padding: "20px",
-  };
-
-  const authenticationContainerStyle = {
-    display: "flex",
-    alignItems: "center",
-  };
-
-  const authenticationItemStyle = {
-    marginLeft: "10px",
-  };
-
+const App = () => {
   return (
     <Router>
-      <div style={containerStyle}>
-        <div>
-          <Homebutton />
-        </div>
-        <div>
-          <SearchBar />
-        </div>
-
-        <div style={authenticationContainerStyle}>
-          <SignUp style={authenticationItemStyle} />
-          <Login style={authenticationItemStyle} />
-        </div>
-      </div>
-      <div>
-        <VideoList />
-      </div>
-      <Routes></Routes>
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <div>
+              <Header /> <VideoList />
+            </div>
+          }
+        />
+        <Route path='/signin' element={<SignIn />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route
+          path='/video/:videoId'
+          element={
+            <div>
+              <Header />
+              <VideoPage></VideoPage>
+            </div>
+          }
+        />{' '}
+      </Routes>
     </Router>
   );
-}
+};
 
 export default App;
