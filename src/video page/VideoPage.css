@@ -2,8 +2,27 @@ main {
   margin: 30px 24px;
   display: flex;
 }
+
 .video-side {
   width: 672px;
+
+
+.wrapper {
+  display: column;
+}
+
+@media (min-width: 1017px) {
+  .wrapper {
+    display: flex;
+  }
+}
+
+.videoWrapper {
+  max-width: 1016px;
+}
+
+.video-side {
+
   margin-right: 40px;
 }
 .title {
@@ -12,6 +31,7 @@ main {
   font-weight: 700;
   line-height: 28px;
   word-spacing: 0px;
+
   height: 28px;
   width: 672px;
   margin: 10px;
@@ -76,7 +96,13 @@ main {
   height: 36px;
 }
 
+.btn-likeUnlike {
+  display: flex;
+}
 .btn-likeUnlike-like {
+  display: flex; /* 아이콘과 텍스트를 가로로 정렬하기 위해 flex 사용 */
+  align-items: center; /* 세로 가운데 정렬을 위해 사용 */
+  justify-content: center;
   font-family: Roboto, Arial, sans-serif;
   font-size: 14px;
   font-weight: bold;
@@ -92,6 +118,8 @@ main {
 }
 
 .btn-likeUnlike-unlike {
+  display: flex;
+  align-items: center;
   font-family: Roboto, Arial, sans-serif;
   font-size: 14px;
   font-weight: bold;
@@ -108,6 +136,9 @@ main {
 }
 
 .btn-share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: Roboto, Arial, sans-serif;
   font-size: 14px;
   font-weight: bold;
@@ -253,4 +284,8 @@ main {
   border: none;
   background-color: transparent;
   border-radius: 20px;
+}
+
+.comment-contents-wrapper {
+  margin-left: 16px;
 }
