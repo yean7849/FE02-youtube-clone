@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import ReplyIcon from '@mui/icons-material/Reply';
+import SortIcon from '@mui/icons-material/Sort';
 
 const Video = () => {
   const { videoId } = useParams();
@@ -132,14 +133,15 @@ const Video = () => {
             <div className='comment-number'>
               {videoDetail && <>댓글 {videoDetail.statistics.commentCount}개</>}
             </div>
-            <div className='comment-filter'>정렬 기준</div>
+            <div className='comment-filter'>
+              <SortIcon />
+              정렬 기준
+            </div>
           </div>
         </div>
         <CommentContents />
       </div>
-      <div className='list-side'>
-        <RcmVideoList />
-      </div>
+      <div className='list-side'></div>
     </div>
   );
 };
