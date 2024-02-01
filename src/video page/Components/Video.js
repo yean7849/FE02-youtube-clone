@@ -52,7 +52,7 @@ const Video = () => {
         <iframe
           className='video'
           style={{ borderRadius: '0.8rem' }}
-          frameborder='0'
+          frameBorder='0'
           width='100%'
           height='378px'
           src={`https://www.youtube.com/embed/${videoId}`}
@@ -141,7 +141,9 @@ const Video = () => {
         </div>
         <CommentContents />
       </div>
-      <div className='list-side'></div>
+      <div className='list-side'>
+        <RcmVideoList />
+      </div>
     </div>
   );
 };
