@@ -3,10 +3,6 @@ main {
   display: flex;
 }
 
-.video-side {
-  width: 672px;
-}
-
 .wrapper {
   display: column;
 }
@@ -99,8 +95,8 @@ main {
   display: flex;
 }
 .btn-likeUnlike-like {
-  display: flex; /* 아이콘과 텍스트를 가로로 정렬하기 위해 flex 사용 */
-  align-items: center; /* 세로 가운데 정렬을 위해 사용 */
+  display: flex; /* ì•„ì´ì½˜ê³¼ í…ìŠ¤íŠ¸ë¥¼ ê°€ë¡œë¡œ ì •ë ¬í•˜ê¸° ìœ„í•´ flex ì‚¬ìš© */
+  align-items: center; /* ì„¸ë¡œ ê°€ìš´ë° ì •ë ¬ì„ ìœ„í•´ ì‚¬ìš© */
   justify-content: center;
   font-family: Roboto, Arial, sans-serif;
   font-size: 14px;
