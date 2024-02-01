@@ -1,0 +1,59 @@
+.mypage {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.mypage img {
+  border-radius: 100%;
+  width: 120px;
+  height: 120px;
+  margin-right: 20px;
+
+}
+
+.mypage > hr {
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.profile_info{
+  display: inline-block;
+  flex-direction: column;
+}
+
+.channelInfo {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.channelInfo > span {
+  margin-right: 10px;
+}
+
+.accountAction {
+  display: flex;
+}
+
+.mypage button {
+  background: #efefef;
+  color: black;
+  border-radius: 40px;
+  border: none;
+  position: relative;
+  height: 32px;
+  width: 120px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  margin-left: 10px;
+}
+
+.mypage button:hover {
+  background: #e0e0e0;
+  color: black;
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import "../css/Sidebar.css";
 import SidebarRow from "../components/SidebarRow";
+import SidebarRowHeader from "../components/SidebarRowHeader";
+import { useNavigate, Link  } from 'react-router-dom';
 
 import HomeIcon from '@mui/icons-material/Home';
 import WhatshotIcon from "@mui/icons-material/Whatshot";
@@ -24,8 +26,15 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import OutlinedFlagSharpIcon from '@mui/icons-material/OutlinedFlagSharp';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 function Sidebar() {
+  const navigate = useNavigate();
+
+  const handleMyPageClick = () => {
+    navigate('/mypage'); 
+  };
+
   return (
     <div className="sidebar">
       <SidebarRow title="홈" Icon={HomeIcon} />
@@ -33,7 +42,9 @@ function Sidebar() {
       <SidebarRow title="구독" Icon={SubscriptionsOutlinedIcon} />
       <hr/>
 
-      <h4>나 <span>&gt;</span></h4>
+      <Link to="/mypage" style={{ textDecoration: 'none', color: 'black'}}>
+        <SidebarRowHeader title="나" Icon={KeyboardArrowRightIcon} />
+      </Link>
       <SidebarRow title="내 채널" Icon={AccountBoxOutlinedIcon} />
       <SidebarRow title="시청 기록" Icon={HistoryIcon} />
       <SidebarRow title="내 동영상" Icon={SmartDisplayOutlinedIcon} />
