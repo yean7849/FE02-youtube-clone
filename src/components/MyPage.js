@@ -2,7 +2,6 @@ import React from "react";
 import UserProfile from "../img/profile.jpg";
 import "../css/MyPage.css";
 import MyPageRow from "../components/MyPageRow";
-import { useNavigate } from 'react-router-dom';
 
 import HistoryIcon from "@mui/icons-material/History";
 import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
@@ -11,12 +10,6 @@ import QueueMusicOutlinedIcon from '@mui/icons-material/QueueMusicOutlined';
 import ContentCutOutlinedIcon from '@mui/icons-material/ContentCutOutlined';
 
 const MyPage = ({ data }) => {
-  const navigate = useNavigate();
-
-  const handleMyPageClick = () => {
-    navigate("/mypage");
-  };
-
   return (
     <div className="mypage" id="profilewrap">
       <div className="userInfo">

@@ -2,7 +2,7 @@ import React from 'react';
 import "../css/Sidebar.css";
 import SidebarRow from "../components/SidebarRow";
 import SidebarRowHeader from "../components/SidebarRowHeader";
-import { useNavigate, Link  } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 
 import HomeIcon from '@mui/icons-material/Home';
 import WhatshotIcon from "@mui/icons-material/Whatshot";
@@ -29,12 +29,6 @@ import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 function Sidebar() {
-  const navigate = useNavigate();
-
-  const handleMyPageClick = () => {
-    navigate('/mypage'); 
-  };
-
   return (
     <div className="sidebar">
       <SidebarRow title="홈" Icon={HomeIcon} />
