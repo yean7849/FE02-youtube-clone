@@ -280,3 +280,11 @@ main {
 .comment-contents-wrapper {
   margin-left: 16px;
 }
+
+.rcmVideo-list-wrapper {
+  display: flex;
+}
+
+.rcmVideo-list-thumbnail {
+  margin-right: 10px;
+}

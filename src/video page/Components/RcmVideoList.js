@@ -1,45 +1,51 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const RcmVideoList = () => {
   const [videoList, setVideoList] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const options = {
-        method: 'GET',
-        url: 'https://youtube-v31.p.rapidapi.com/search',
-        params: {
-          relatedToVideoId: '7ghhRHRP6t4',
-          part: 'id,snippet',
-          type: 'video',
-          maxResults: '50',
-        },
-        headers: {
-          'X-RapidAPI-Key':
-            '124beff6fcmsh4aacf917256fd61p13baa9jsneffb301e16ac',
-          'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
-        },
-      };
-
+    const fetchVideos = async () => {
       try {
-        const response = await axios.request(options);
+        const response = await axios.get(
+          'https://www.googleapis.com/youtube/v3/search',
+          {
+            params: {
+              part: 'snippet',
+              q: 'kpop music',
+              type: 'video',
+              maxResults: 10,
+              key: 'AIzaSyC_TPEOWmeacKWIE40BBAQdygMXzYzAcYc',
+            },
+          }
+        );
         setVideoList(response.data.items);
       } catch (error) {
-        console.error(error);
+        console.error('Failed to fetch videos', error);
       }
     };
 
-    fetchData();
+    fetchVideos();
   }, []);
+
+  // 비디오 클릭 핸들러 함수
+  const handleVideoClick = (videoId) => {
+    navigate(`/video/${videoId}`);
+  };
 
   return (
     <div>
       <div className='rcmVideo-list'>
         <div className='rcmVideo-list-filter'></div>
         {videoList.map((video) => (
-          <div className='rcmVideo-list-wrapper' key={video.id.videoId}>
-            <div className='rcmVideo-list-thumnail'>
+          <div
+            className='rcmVideo-list-wrapper'
+            key={video.id.videoId}
+            onClick={() => handleVideoClick(video.id.videoId)}
+            style={{ cursor: 'pointer' }}>
+            <div className='rcmVideo-list-thumbnail'>
               <img
                 style={{ borderRadius: '0.3rem' }}
                 src={video.snippet.thumbnails.default.url}
@@ -53,10 +59,8 @@ const RcmVideoList = () => {
               <div className='rcmVideo-list-info-subinfo'>
                 {video.snippet.channelTitle}
               </div>
-
               <div className='rcmVideo-list-info-subinfo'>
-                조회수 {video.statistics.viewCount} ・{' '}
-                {video.snippet.publishedAt}
+                {new Date(video.snippet.publishedAt).toLocaleDateString()}
               </div>
             </div>
           </div>
