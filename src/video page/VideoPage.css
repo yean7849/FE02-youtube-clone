@@ -3,6 +3,10 @@ main {
   display: flex;
 }
 
+.video-side {
+  width: 672px;
+}
+
 .wrapper {
   display: column;
 }
@@ -26,6 +30,9 @@ main {
   font-weight: 700;
   line-height: 28px;
   word-spacing: 0px;
+
+  height: 28px;
+  width: 672px;
   margin: 10px;
 }
 
@@ -87,6 +94,7 @@ main {
   width: 56.2266px;
   height: 36px;
 }
+
 .btn-likeUnlike {
   display: flex;
 }
