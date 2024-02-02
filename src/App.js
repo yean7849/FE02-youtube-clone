@@ -61,10 +61,13 @@ const App = () => {
           element={
             <div>
               <Header />
-              <ScrollableSidebar>
-                <Sidebar />
-              </ScrollableSidebar>
-              <MyPage data={data} />
+              <div style={mainVideo}>
+                {' '}
+                <ScrollableSidebar>
+                  <Sidebar />
+                </ScrollableSidebar>
+                <MyPage data={data} />
+              </div>
             </div>
           }
         />
