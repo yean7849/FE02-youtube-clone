@@ -1,13 +1,8 @@
 import React from 'react';
-<<<<<<< HEAD
 import '../css/Sidebar.css';
 import SidebarRow from '../components/SidebarRow';
-=======
-import "../css/Sidebar.css";
-import SidebarRow from "../components/SidebarRow";
-import SidebarRowHeader from "../components/SidebarRowHeader";
-import { Link  } from 'react-router-dom';
->>>>>>> origin/Feature-C
+import SidebarRowHeader from '../components/SidebarRowHeader';
+import { Link } from 'react-router-dom';
 
 import HomeIcon from '@mui/icons-material/Home';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
@@ -41,27 +36,15 @@ function Sidebar() {
       <SidebarRow title='구독' Icon={SubscriptionsOutlinedIcon} />
       <hr />
 
-<<<<<<< HEAD
-      <h4>
-        나 <span>&gt;</span>
-      </h4>
+      <Link to='/mypage' style={{ textDecoration: 'none', color: 'black' }}>
+        <SidebarRowHeader title='나' Icon={KeyboardArrowRightIcon} />
+      </Link>
       <SidebarRow title='내 채널' Icon={AccountBoxOutlinedIcon} />
       <SidebarRow title='시청 기록' Icon={HistoryIcon} />
       <SidebarRow title='내 동영상' Icon={SmartDisplayOutlinedIcon} />
       <SidebarRow title='나중에 볼 동영상' Icon={WatchLaterOutlinedIcon} />
       <SidebarRow title='좋아요 표시한 동영상' Icon={ThumbUpAltOutlinedIcon} />
       <hr />
-=======
-      <Link to="/mypage" style={{ textDecoration: 'none', color: 'black'}}>
-        <SidebarRowHeader title="나" Icon={KeyboardArrowRightIcon} />
-      </Link>
-      <SidebarRow title="내 채널" Icon={AccountBoxOutlinedIcon} />
-      <SidebarRow title="시청 기록" Icon={HistoryIcon} />
-      <SidebarRow title="내 동영상" Icon={SmartDisplayOutlinedIcon} />
-      <SidebarRow title="나중에 볼 동영상" Icon={WatchLaterOutlinedIcon} />
-      <SidebarRow title="좋아요 표시한 동영상" Icon={ThumbUpAltOutlinedIcon} />
-      <hr/>
->>>>>>> origin/Feature-C
 
       <h4>구독</h4>
       <SidebarRow title='더보기' Icon={ExpandMoreOutlinedIcon} />
