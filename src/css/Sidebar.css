@@ -4,7 +4,6 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow-y: scroll;
-  
 }
 
 .sidebar > hr {
@@ -16,22 +15,22 @@
 }
 
 .sidebar > span {
- font-size: large;
+  font-size: large;
 }
 
 .sidebar::-webkit-scrollbar {
- width: 10px;
+  width: 10px;
 }
 
 .sidebar::-webkit-scrollbar-track {
- background-color: #fff; 
+  background-color: #fff;
 }
 
 .sidebar::-webkit-scrollbar-thumb {
- background-color: #909090;
- border-radius: 10px;
+  background-color: #909090;
+  border-radius: 10px;
 }
 
 .sidebar::-webkit-scrollbar-thumb:hover {
- background-color: #909090; 
+  background-color: #909090;
 }

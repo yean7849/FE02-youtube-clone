@@ -1,0 +1,48 @@
+/* VideoList.css */
+
+.video-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* 각 열을 나눌 간격을 설정합니다. */
+}
+
+.video-list-Main {
+  width: calc(48% - 20px);
+  height: 230px;
+  margin: -10px;
+  border-radius: 20px;
+}
+
+.video-thumbnail {
+  width: 100%; /* 이미지를 부모 엘리먼트에 맞게 100%로 설정합니다. */
+  height: auto; /* 가로 비율을 유지한 채 세로 크기를 자동으로 조절합니다. */
+}
+
+.video-item {
+  box-sizing: border-box;
+  cursor: pointer;
+  width: calc(
+    48% - 20px
+  ); /* 각 동영상 아이템이 화면의 48%를 차지하고 간격을 20px로 조절합니다. */
+  margin-bottom: 20px; /* 아래쪽 간격을 설정합니다. */
+}
+
+.video-item {
+  width: 400px; /* 각 동영상 아이템이 화면의 48%를 차지하도록 설정 */
+  height: 400px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 10px;
+}
+
+@media (max-width: 1200px) {
+  .video-list-Main {
+    width: calc(48% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .video-list-Main {
+    width: calc(100% - 15px);
+  }
+}
