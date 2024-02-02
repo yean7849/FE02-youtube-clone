@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  HashRouter,
+} from 'react-router-dom';
 import SignIn from './components/SignIn';
 import VideoList from './components/VideoList';
 import SignUp from './components/SignUp';
@@ -31,7 +36,7 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
+    <HashRouter>
       <Routes>
         <Route
           path='/'
@@ -72,7 +77,7 @@ const App = () => {
           }
         />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 };
 
