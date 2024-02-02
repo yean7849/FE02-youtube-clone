@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignIn from './components/SignIn';
 import VideoList from './components/VideoList';
@@ -8,7 +8,7 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import styled from 'styled-components';
 import MyPage from './components/MyPage';
-import fetchData from "./axios/fetchData";
+import fetchData from './axios/fetchData';
 
 const ScrollableSidebar = styled.div`
   height: 100%;
@@ -39,7 +39,7 @@ const App = () => {
             <div>
               <Header />
               <div style={mainVideo}>
-                <Sidebar /> 
+                <Sidebar />
                 <VideoList />
               </div>
             </div>
@@ -64,7 +64,7 @@ const App = () => {
               <ScrollableSidebar>
                 <Sidebar />
               </ScrollableSidebar>
-              <MyPage data={data} /> 
+              <MyPage data={data} />
             </div>
           }
         />
