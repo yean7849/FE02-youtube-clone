@@ -1,9 +1,9 @@
 import React from "react";
 import "../css/SidebarRow.css";
 
-function SidebarRow({ Icon, title }) {
+function SidebarRow({ Icon, title, onClick }) {
   return (
-    <div className="sidebarRow">
+    <div className="sidebarRow" onClick={onClick}>
       <Icon className="sidebarRow__icon" />
       <p className="sidebarRow__title" style={{ marginLeft: "10px" }}>
         {title}
