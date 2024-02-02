@@ -1,12 +1,13 @@
 // VideoList.js
 
 import React, { useState, useEffect } from "react";
-import Video from "./Video";
+import { useNavigate } from "react-router-dom"; // useNavigate 불러오기
 import "./VideoList.css";
 
 const VideoList = () => {
   const [videos, setVideos] = useState([]);
-  const [selectedVideoId, setSelectedVideoId] = useState("");
+  const [selectedVideoId, setSelectedVideoId] = useState(""); // 수정된 부분
+  const navigate = useNavigate(); // useNavigate 초기화
 
   useEffect(() => {
     // YouTube API Key
@@ -38,6 +39,8 @@ const VideoList = () => {
 
   const handleVideoSelect = (videoId) => {
     setSelectedVideoId(videoId);
+    // 동영상 선택 시 해당 동영상 페이지로 이동
+    navigate(`/video/${videoId}`);
   };
 
   return (
@@ -49,15 +52,11 @@ const VideoList = () => {
             onClick={() => handleVideoSelect(video.id.videoId)}
             className="video-item"
           >
-            <iframe
-              width="100%"
-              height="auto"
-              src={`https://www.youtube.com/embed/${video.id.videoId}`}
-              title={video.snippet.title}
-              frameBorder="0"
-              allowFullScreen
-              className="video-list-Main"
-            ></iframe>
+            <img
+              src={video.snippet.thumbnails.medium.url}
+              alt={video.snippet.title}
+              className="video-thumbnail"
+            />
             <div className="video-details">
               <h3>{video.snippet.title}</h3>
               <p>{video.snippet.channelTitle}</p>
@@ -69,7 +68,6 @@ const VideoList = () => {
           </div>
         ))}
       </div>
-      <div></div>
     </div>
   );
 };
