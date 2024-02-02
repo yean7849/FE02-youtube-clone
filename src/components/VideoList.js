@@ -1,6 +1,5 @@
 // VideoList.js
 
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // useNavigate 불러오기
 import './VideoList.css';
@@ -8,24 +7,11 @@ import './VideoList.css';
 const VideoList = () => {
   const [videos, setVideos] = useState([]);
   const [selectedVideoId, setSelectedVideoId] = useState(''); // 수정된 부분
-=======
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // useNavigate 불러오기
-import "./VideoList.css";
-
-const VideoList = () => {
-  const [videos, setVideos] = useState([]);
-  const [selectedVideoId, setSelectedVideoId] = useState(""); // 수정된 부분
->>>>>>> develop
   const navigate = useNavigate(); // useNavigate 초기화
 
   useEffect(() => {
     // YouTube API Key
-<<<<<<< HEAD
     const apiKey = 'AIzaSyBZ72Z_N_A6OUYjwX8GrIZk6C3tt2ampvg';
-=======
-    const apiKey = "AIzaSyBZ72Z_N_A6OUYjwX8GrIZk6C3tt2ampvg";
->>>>>>> develop
     // YouTube Data API 엔드포인트
     const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=검색어&key=${apiKey}`;
 
@@ -34,25 +20,15 @@ const VideoList = () => {
       try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
-<<<<<<< HEAD
           throw new Error('API 요청이 실패했습니다.');
-=======
-          throw new Error("API 요청이 실패했습니다.");
->>>>>>> develop
         }
 
         const data = await response.json();
         setVideos(data.items);
         // 초기 선택된 동영상 ID를 설정 (첫 번째 동영상의 ID로 설정)
-<<<<<<< HEAD
         setSelectedVideoId(data.items[0]?.id.videoId || '');
       } catch (error) {
         console.error('에러 발생:', error.message);
-=======
-        setSelectedVideoId(data.items[0]?.id.videoId || "");
-      } catch (error) {
-        console.error("에러 발생:", error.message);
->>>>>>> develop
       }
     };
 
@@ -69,16 +45,11 @@ const VideoList = () => {
 
   return (
     <div>
-<<<<<<< HEAD
       <div className='video-list-container'>
-=======
-      <div className="video-list-container">
->>>>>>> develop
         {videos.map((video) => (
           <div
             key={video.id.videoId}
             onClick={() => handleVideoSelect(video.id.videoId)}
-<<<<<<< HEAD
             className='video-item'>
             <img
               src={video.snippet.thumbnails.medium.url}
@@ -90,20 +61,6 @@ const VideoList = () => {
               <p>{video.snippet.channelTitle}</p>
               <p>
                 게시일:{' '}
-=======
-            className="video-item"
-          >
-            <img
-              src={video.snippet.thumbnails.medium.url}
-              alt={video.snippet.title}
-              className="video-thumbnail"
-            />
-            <div className="video-details">
-              <h3>{video.snippet.title}</h3>
-              <p>{video.snippet.channelTitle}</p>
-              <p>
-                게시일:{" "}
->>>>>>> develop
                 {new Date(video.snippet.publishedAt).toLocaleDateString()}
               </p>
             </div>
