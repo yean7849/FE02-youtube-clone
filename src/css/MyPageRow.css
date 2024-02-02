@@ -1,0 +1,25 @@
+.myPageRow {
+  display: block;
+  align-items: center;
+  padding: 10px 20px;
+  width: 60vW;
+}
+
+.myPageRow > p {
+  padding-left: 18px;
+}
+
+.myPageRow__icon {
+  color: black;
+  font-size: 28px !important;
+}
+
+.myPageRow__title {
+  display: inline;
+  margin-left: 20px;
+  font-weight: bold;
+  white-space: nowrap; 
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+}
