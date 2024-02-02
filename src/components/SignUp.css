@@ -1,0 +1,87 @@
+.signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.signup-box {
+  width: 400px;
+  height: 600px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+}
+
+.signup-title-logo img {
+  padding-top: 20px;
+  width: 190px;
+  height: 60px;
+}
+
+.signup-header {
+  padding: 20px 0px 20px 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.signup-Id {
+  width: 60%;
+  padding: 10px;
+  margin-top: 8px;
+}
+
+.signup-email {
+  width: 60%;
+  padding: 10px;
+  margin-top: 8px;
+}
+
+.signupErrorMessage {
+  font-size: 12px;
+  color: red;
+  padding-top: 5px;
+}
+
+.signup-password {
+  width: 60%;
+  padding: 10px;
+  margin-top: 8px;
+}
+
+.signup-password-check {
+  width: 60%;
+  padding: 10px;
+  margin-top: 8px;
+}
+
+.signupSumbit {
+  width: 240px;
+  padding: 15px;
+  margin-top: 15px;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.login-movie {
+  padding: 35px;
+}
+
+.login-page-move {
+  font-size: 15px;
+}
+
+.login-page {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-size: 15px;
+  color: red;
+}
